@@ -30,6 +30,7 @@ if (!is_null($events['events'])) {
                     }
                 }
             }
+            $text .= $text .'uid:'.$event['source']['userId'];
             // Get replyToken
             $replyToken = $event['replyToken'];
 
