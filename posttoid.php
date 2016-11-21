@@ -53,9 +53,9 @@ echo "OK";
 <html>
     <body>
         <form method="post" action="">
-            <input type="hidden" name="status" value="true">
-            uid : <input name="uid" value=""> <br>
-            msg : <textarea name="msg"></textarea>
+            <input type="hidden" name="status" width="200" value="true">
+            uid : <input name="uid" value=""  size="200"> <br>
+            msg : <textarea name="msg" size="400"  ></textarea>
         </form>
     </body>    
 </html>
