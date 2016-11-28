@@ -21,7 +21,7 @@ $messages = [
 $url = 'https://notify-api.line.me/api/notify';
 $data = [
    
-    'message' => [$messages]
+    'message' => $text
 ];
 $post = json_encode($data);
 $headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
