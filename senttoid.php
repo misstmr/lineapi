@@ -27,6 +27,7 @@ $post = json_encode($data);
 
 $post = '{
 	"to": "Uc306e0332ff28d6e2ba20889702f90fd",
+	"messages" :[{
   "type": "template",
   "altText": "this is a confirm template",
   "template": {
@@ -45,6 +46,7 @@ $post = '{
           }
       ]
   }
+ }]
 }';
 $headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 
