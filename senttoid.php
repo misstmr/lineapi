@@ -5,7 +5,7 @@ $access_token = 'QhRuEnlYYgUqhkE6xvQcy3z66LhecJXz3bgDLTgX4LW4fpmzV/cPuUa05MDCI//
 // Validate parsed JSON data
 // Loop through each event
 // Reply only when message sent is in 'text' format
-$text = "สวัสดี เบนซ์ สุดหล่อ";
+$text = "สวัสดี เบนซ์ สุดหล่อ new";
 
 
 // Get replyToken
