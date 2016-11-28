@@ -24,7 +24,7 @@ $data = [
     'message' => $text
 ];
 $post = 'message=notify 123456789';
-$post = '"messages" :[{
+$post = '"message" :[{
   "type": "template",
   "altText": "this is a confirm template",
   "template": {
