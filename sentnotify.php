@@ -24,7 +24,7 @@ $data = [
     'message' => $text
 ];
 $post = 'message=notify 123456789';
-$post = '"message" :[{
+$post = '{"message" :[{
   "type": "template",
   "altText": "this is a confirm template",
   "template": {
@@ -43,7 +43,7 @@ $post = '"message" :[{
           }
       ]
   }
- }]
+ }]}
 ';
 $headers = array('Content-Type: application/json','Authorization: Bearer ' . $access_token);
 
