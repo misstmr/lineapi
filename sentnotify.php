@@ -23,8 +23,8 @@ $data = [
    
     'message' => $text
 ];
-$post = json_encode($data);
-$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+$post = 'message=notify 123456789';
+$headers = array('Authorization: Bearer ' . $access_token);
 
 $ch = curl_init($url);
 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
