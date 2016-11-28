@@ -26,7 +26,8 @@ $data = [
 $post = json_encode($data);
 
 $post = '{
-	"toChannel" : 1484778431,
+	"to" : "",
+	"toChannel" : "1484778431",
 	"messages" :[{
   "type": "template",
   "altText": "this is a confirm template",
