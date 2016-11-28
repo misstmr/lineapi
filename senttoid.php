@@ -26,7 +26,7 @@ $data = [
 $post = json_encode($data);
 
 $post = '{
-	"to" : "",
+	"to" : '.$toid.',
 	"toChannel" : "1484778431",
 	"messages" :[{
   "type": "template",
