@@ -1,6 +1,6 @@
 <?php
 
-$access_token = 'I6yzpGEJuIZUGSqXqI5q5GQOEJsGpRIENvscxWMUPkp';
+$access_token = 'twiWFbmpqX3L7qLnnPNYEhWqCottxucKr7BB082T9AW';
 
 // Validate parsed JSON data
 // Loop through each event
@@ -24,27 +24,6 @@ $data = [
     'message' => $text
 ];
 $post = 'message=notify 123456789';
-$post = '{"message" :[{
-  "type": "template",
-  "altText": "this is a confirm template",
-  "template": {
-      "type": "confirm",
-      "text": "Are you sure?",
-      "actions": [
-          {
-            "type": "message",
-            "label": "Yes",
-            "text": "yes"
-          },
-          {
-            "type": "message",
-            "label": "No",
-            "text": "no"
-          }
-      ]
-  }
- }]}
-';
 $headers = array('Content-Type: application/json','Authorization: Bearer ' . $access_token);
 
 $ch = curl_init($url);
