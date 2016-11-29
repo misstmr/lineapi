@@ -8,8 +8,6 @@ $access_token = 'twiWFbmpqX3L7qLnnPNYEhWqCottxucKr7BB082T9AW';
 $text = "sent by notify";
 
 
-
-
 // Get replyToken
 $toid = "Uc306e0332ff28d6e2ba20889702f90fd";
 
@@ -26,7 +24,7 @@ $data = [
     'message' => $text
 ];
 $post = 'message=notify 123456789';
-$headers = array('Content-Type: application/json','Authorization: Bearer ' . $access_token);
+$headers = array('Authorization: Bearer ' . $access_token);
 
 $ch = curl_init($url);
 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
