@@ -4,7 +4,7 @@
 
 
 $access_token = $_POST['access_token'];
-
+$access_token = 'twiWFbmpqX3L7qLnnPNYEhWqCottxucKr7BB082T9AW';
 // Validate parsed JSON data
 // Loop through each event
 // Reply only when message sent is in 'text' format
@@ -27,6 +27,7 @@ $data = [
     'message' => $text
 ];
 $post = 'message='.$_POST['message'];
+$post = 'message=test12345';
 $headers = array('Authorization: Bearer ' . $access_token);
 
 $ch = curl_init($url);
