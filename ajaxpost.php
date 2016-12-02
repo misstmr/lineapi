@@ -27,7 +27,7 @@ $data = [
     'message' => $text
 ];
 $post = 'message='.$_POST['message'];
-$post = 'message=test12345';
+//$post = 'message=test12345';
 $headers = array('Authorization: Bearer ' . $access_token);
 
 $ch = curl_init($url);
