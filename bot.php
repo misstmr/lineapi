@@ -12,25 +12,25 @@ if (!is_null($events['events'])) {
     foreach ($events['events'] as $event) {
         // Reply only when message sent is in 'text' format
         if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
-            // Get text sent			
-            if ($event['message']['text'] == "โหน่ง") {
-                $text = "สวัสดี โหน่ง จิตราพร จอมวงค์";
-            } else {
-                if ($event['message']['text'] == "หญิง") {
-                    $text = "สวัสดี หญิง อรชพร";
-                } else {
-                    if ($event['message']['text'] == "เบนซ์") {
-                        $text = "สวัสดี เบนซ์ สุดหล่อ";
-                    } else {
-                        if ($event['message']['text'] == "เหน่ง") {
-                            $text = "สวัสดี เหน่ง Y NOT 7 สุดหล่อ";
-                        } else {
-                            $text = $event['message']['text'];
-                        }
-                    }
+            // Get text sent	
+            
+            $temp = explode(':', $event['message']['type']);
+            $num = count($temp);
+            if($num>=1){
+                if($temp[0]=='mis'){
+                      if($num>=2){
+                          $text = 'รายการ '.$temp[1];
+                      }else{
+                          $text = 'ยังไม่มีบริการ "'. $temp[1].'" ช่วยเหลือพิมพ์ "mis:?"';
+                      }
+                }else{
+                   $text = 'ยังไม่มีบริการในรายการนี้ ช่วยเหลือพิมพ์ "mis:?"';
                 }
+            }else{
+                  $text = 'ยังไม่มีบริการในรายการนี้ ช่วยเหลือพิมพ์ "mis:?"';
             }
-            $text .= $text .'uid:'.$event['source']['userId'];
+            
+            
             // Get replyToken
             $replyToken = $event['replyToken'];
 
