@@ -14,7 +14,7 @@ if (!is_null($events['events'])) {
         if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
             // Get text sent	
             
-            $temp = explode(':', $event['message']['type']);
+            $temp = explode(':', $event['message']['text']);
             $num = count($temp);
             if($num>=1){
                 if($temp[0]=='mis'){
