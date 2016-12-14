@@ -26,10 +26,6 @@ if (!is_null($events['events'])) {
                 }else{
                    $text = 'ยังไม่มีบริการในรายการนี้ ช่วยเหลือพิมพ์ "mis:?"';
                 }
-            }else{
-                  $text = 'ยังไม่มีบริการในรายการนี้ ช่วยเหลือพิมพ์ "mis:?"';
-            }
-            
             
             // Get replyToken
             $replyToken = $event['replyToken'];
@@ -59,6 +55,12 @@ if (!is_null($events['events'])) {
             curl_close($ch);
 
             echo $result . "\r\n";
+
+            }else{
+                  $text = 'ยังไม่มีบริการในรายการนี้ ช่วยเหลือพิมพ์ "mis:?"';
+            }
+            
+            
         }
     }
 }
