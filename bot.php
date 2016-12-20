@@ -34,6 +34,11 @@ if (!is_null($events['events'])) {
                                 break;
                             case "green":
                                 $text = "Your favorite color is green!";
+                               //  $text = "รายการ " . $temp[1] . " ยังไม่มีบริการ";
+                                $msg = [
+                                    'type' => 'text',
+                                    'text' => $text
+                                ];
                                 break;
                             default:
                                 $text = "รายการ " . $temp[1] . " ยังไม่มีบริการ";
