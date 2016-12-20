@@ -33,7 +33,7 @@ if (!is_null($events['events'])) {
                                     'thumbnailImageUrl' => 'https://secure-earth-92819.herokuapp.com/login_icon.jpeg',
                                     'title' => 'Menu',
                                     'text' => 'Please select',
-                                    'actions' => $actions
+                                    'actions' => [$actions]
                                 ];
 
                                 $msg = [

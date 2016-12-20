@@ -22,12 +22,12 @@ $template = [
 $msg = [
     'type' => 'template',
     'altText' => 'MIS MED CMU LOGIN',
-    'template' => [$template]
+    'template' => $template
 ];
 $data = [
     'to' => 'sssss',
     'messages' => [$msg],
 ];
 $post = json_encode($data);
-echo $post;
+var_dump($post);
 ?>
