@@ -14,6 +14,14 @@ if (!is_null($events['events'])) {
         if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
             // Get text sent	
 
+            $replyToken = $event['replyToken'];
+            $type = $event['source']['type'];
+            if ($type == 'user') {
+                $replyToken = $event['source']['userId'];
+            } else {
+                $replyToken = $event['source']['groupId'];
+            }
+            
             $temp = explode(':', $event['message']['text']);
             $num = count($temp);
             if ($num >= 1) {
@@ -64,9 +72,8 @@ if (!is_null($events['events'])) {
                                     'template' => $template
                                 ];
                                 break;
-                            case "green":
-                                $text = "Your favorite color is green!";
-                                //  $text = "รายการ " . $temp[1] . " ยังไม่มีบริการ";
+                            case "?":
+                                $text = "พิมพ์ mis:regis เพื่อลงทะเบียน ตอนนี้ท่านใช้งานผ่านช่องทาง ".$type." เป็นทางลงทะเบียนแบบ ".$type;
                                 $msg = [
                                     'type' => 'text',
                                     'text' => $text
@@ -88,15 +95,7 @@ if (!is_null($events['events'])) {
                     }
 
                     // Get replyToken
-$replyToken = $event['replyToken'];
-                    if ($event['source']['type'] == 'user') {
-                        $replyToken = $event['source']['userId'];
-                    } else {
-                        $replyToken = $event['source']['groupId'];
-                    }
-
-                    
-                  //  $replyToken = $event['source']['userId'];
+                    //  $replyToken = $event['source']['userId'];
                     // Build message to reply back
                     $messages = $msg;
 
