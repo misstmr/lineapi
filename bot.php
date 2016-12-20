@@ -20,8 +20,8 @@ if (!is_null($events['events'])) {
                 if ($temp[0] == 'mis' || $temp[0] == 'Mis') {
                     if ($num >= 2) {
                         switch ($temp[1]) {
-                            case "regis" || "Regis":
-                                
+                            case "regis":
+
                                 $actions = [
                                     'type' => 'uri',
                                     'label' => 'Login to Register',
@@ -43,8 +43,26 @@ if (!is_null($events['events'])) {
                                 ];
 
                                 break;
-                            case "blue":
-                                $text = "Your favorite color is blue!";
+                            case "Regis":
+                                $actions = [
+                                    'type' => 'uri',
+                                    'label' => 'Login to Register',
+                                    'uri' => 'http://www.med.cmu.ac.th/eiu/eis/ci_api'
+                                ];
+
+                                $template = [
+                                    'type' => 'buttons',
+                                    'thumbnailImageUrl' => 'https://secure-earth-92819.herokuapp.com/login_icon.jpeg',
+                                    'title' => 'ลงทะเบียน',
+                                    'text' => 'ลงทะเบียน Line ID ผูกกับระบบคณะแพทยษศาสตร์ มช.',
+                                    'actions' => [$actions]
+                                ];
+
+                                $msg = [
+                                    'type' => 'template',
+                                    'altText' => 'MIS MED CMU LOGIN',
+                                    'template' => $template
+                                ];
                                 break;
                             case "green":
                                 $text = "Your favorite color is green!";
@@ -55,7 +73,7 @@ if (!is_null($events['events'])) {
                                 ];
                                 break;
                             default:
-                                $text = "รายการ " . $temp[1] . " ยังไม่มีบริการ" . $event['source']['type'] . $event['source']['userId'];
+                                $text = "รายการ " . $temp[1] . " ยังไม่มีบริการ";
                                 $msg = [
                                     'type' => 'text',
                                     'text' => $text
@@ -70,8 +88,15 @@ if (!is_null($events['events'])) {
                     }
 
                     // Get replyToken
-                    $replyToken = $event['replyToken'];
-                    $replyToken = $event['source']['userId'];
+$replyToken = $event['replyToken'];
+                    if ($event['source']['type'] == 'user') {
+                        $replyToken = $event['source']['userId'];
+                    } else {
+                        $replyToken = $event['source']['groupId'];
+                    }
+
+                    
+                  //  $replyToken = $event['source']['userId'];
                     // Build message to reply back
                     $messages = $msg;
 
@@ -79,7 +104,7 @@ if (!is_null($events['events'])) {
 
 
                     // Make a POST Request to Messaging API to reply to sender
-                    $url = 'https://api.line.me/v2/bot/message/reply';
+                    //$url = 'https://api.line.me/v2/bot/message/reply';
                     $url = 'https://api.line.me/v2/bot/message/push';
                     $data = [
                         'to' => $replyToken,
