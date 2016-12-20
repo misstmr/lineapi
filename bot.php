@@ -17,7 +17,7 @@ if (!is_null($events['events'])) {
             $temp = explode(':', $event['message']['text']);
             $num = count($temp);
             if ($num >= 1) {
-                if ($temp[0] == 'mis') {
+                if ($temp[0] == 'mis' || $temp[0] == 'Mis') {
                     if ($num >= 2) {
                         switch ($temp[1]) {
                             case "regis":
