@@ -22,10 +22,21 @@ if (!is_null($events['events'])) {
                         switch ($temp[1]) {
                             case "regis":
 
+
                                 $msg = [
-                                    'type' => 'image',
-                                    'originalContentUrl' => 'https://secure-earth-92819.herokuapp.com/login_icon.jpeg',
-                                    'previewImageUrl' => 'https://secure-earth-92819.herokuapp.com/login_icon.jpeg'
+                                    'type' => 'template',
+                                    'altText' => 'MIS MED CMU LOGIN',
+                                    'template' => [
+                                        'type' => 'buttons',
+                                        'thumbnailImageUrl' => 'https://secure-earth-92819.herokuapp.com/login_icon.jpeg',
+                                        'title' => 'Menu',
+                                        'text' => 'Please select',
+                                        'actions' => [
+                                            'type' => 'uri',
+                                            'label' => 'View detail',
+                                            'uri' => 'http://www.med.cmu.ac.th'
+                                        ]
+                                    ]
                                 ];
 
                                 break;
@@ -41,7 +52,7 @@ if (!is_null($events['events'])) {
                                 ];
                                 break;
                             default:
-                                $text = "รายการ " . $temp[1] . " ยังไม่มีบริการ";
+                                $text = "รายการ " . $temp[1] . " ยังไม่มีบริการ" . $event['source']['type'] . $event['source']['userId'];
                                 $msg = [
                                     'type' => 'text',
                                     'text' => $text
@@ -56,7 +67,7 @@ if (!is_null($events['events'])) {
                     }
 
                     // Get replyToken
-                    //$replyToken = $event['replyToken'];
+                    $replyToken = $event['replyToken'];
                     $replyToken = $event['source']['userId'];
                     // Build message to reply back
                     $messages = $msg;
@@ -65,7 +76,7 @@ if (!is_null($events['events'])) {
 
 
                     // Make a POST Request to Messaging API to reply to sender
-                    // $url = 'https://api.line.me/v2/bot/message/reply';
+                    $url = 'https://api.line.me/v2/bot/message/reply';
                     $url = 'https://api.line.me/v2/bot/message/push';
                     $data = [
                         'to' => $replyToken,
