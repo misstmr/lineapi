@@ -24,15 +24,15 @@ if (!is_null($events['events'])) {
                                 
                                 $actions = [
                                     'type' => 'uri',
-                                    'label' => 'View detail',
-                                    'uri' => 'http://www.med.cmu.ac.th'
+                                    'label' => 'Login to Register',
+                                    'uri' => 'http://www.med.cmu.ac.th/eiu/eis/ci_api'
                                 ];
 
                                 $template = [
                                     'type' => 'buttons',
                                     'thumbnailImageUrl' => 'https://secure-earth-92819.herokuapp.com/login_icon.jpeg',
-                                    'title' => 'Menu',
-                                    'text' => 'Please select',
+                                    'title' => 'ลงทะเบียน Line ID ผูกกับระบบคณะแพทยษศาสตร์ มช.',
+                                    'text' => 'Login โดยใช้ username password ระบบวันลา,บริหารจัดการ',
                                     'actions' => [$actions]
                                 ];
 
