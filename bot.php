@@ -62,7 +62,7 @@ if (!is_null($events['events'])) {
                                     'type' => 'buttons',
                                     'thumbnailImageUrl' => 'https://secure-earth-92819.herokuapp.com/login_icon.jpeg',
                                     'title' => 'ลงทะเบียน',
-                                    'text' => 'ลงทะเบียน Line ID ผูกกับระบบคณะแพทยษศาสตร์ มช.',
+                                    'text' => 'ลงทะเบียน Line ID ผูกกับระบบคณะแพทยษศาสตร์ มช. กดเบาๆ => "Login to Register"',
                                     'actions' => [$actions]
                                 ];
 
