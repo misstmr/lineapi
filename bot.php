@@ -20,7 +20,7 @@ if (!is_null($events['events'])) {
                 if ($temp[0] == 'mis' || $temp[0] == 'Mis') {
                     if ($num >= 2) {
                         switch ($temp[1]) {
-                            case "regis":
+                            case "regis" || "Regis":
                                 
                                 $actions = [
                                     'type' => 'uri',
@@ -31,8 +31,8 @@ if (!is_null($events['events'])) {
                                 $template = [
                                     'type' => 'buttons',
                                     'thumbnailImageUrl' => 'https://secure-earth-92819.herokuapp.com/login_icon.jpeg',
-                                    'title' => 'ลงทะเบียน Line ID ผูกกับระบบคณะแพทยษศาสตร์ มช.',
-                                    'text' => 'Login โดยใช้ username password ระบบวันลา,บริหารจัดการ',
+                                    'title' => 'ลงทะเบียน',
+                                    'text' => 'ลงทะเบียน Line ID ผูกกับระบบคณะแพทยษศาสตร์ มช.',
                                     'actions' => [$actions]
                                 ];
 
