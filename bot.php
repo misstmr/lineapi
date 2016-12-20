@@ -25,7 +25,7 @@ if (!is_null($events['events'])) {
                                 $msg = [
                                 'type' => 'image',
                                 'originalContentUrl' => 'login_icon.png',
-                                'previewImageUrl' => 'login_icon.png'
+                                'previewImageUrl' => ''
                                 ];
                                     
                                 break;
