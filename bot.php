@@ -21,22 +21,25 @@ if (!is_null($events['events'])) {
                     if ($num >= 2) {
                         switch ($temp[1]) {
                             case "regis":
+                                
+                                $action = [
+                                    'type' => 'uri',
+                                    'label' => 'View detail',
+                                    'uri' => 'http://www.med.cmu.ac.th'
+                                ];
 
+                                $template = [
+                                    'type' => 'buttons',
+                                    'thumbnailImageUrl' => 'https://secure-earth-92819.herokuapp.com/login_icon.jpeg',
+                                    'title' => 'Menu',
+                                    'text' => 'Please select',
+                                    'actions' => $actions
+                                ];
 
                                 $msg = [
                                     'type' => 'template',
                                     'altText' => 'MIS MED CMU LOGIN',
-                                    'template' => [
-                                        'type' => 'buttons',
-                                        'thumbnailImageUrl' => 'https://secure-earth-92819.herokuapp.com/login_icon.jpeg',
-                                        'title' => 'Menu',
-                                        'text' => 'Please select',
-                                        'actions' => [
-                                            'type' => 'uri',
-                                            'label' => 'View detail',
-                                            'uri' => 'http://www.med.cmu.ac.th'
-                                        ]
-                                    ]
+                                    'template' => $template
                                 ];
 
                                 break;
