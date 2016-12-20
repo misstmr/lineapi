@@ -44,6 +44,10 @@ if (!is_null($events['events'])) {
                         }
                     } else {
                         $text = 'ยังไม่มีบริการ "' . $temp[1] . '" ช่วยเหลือพิมพ์ "mis:?"';
+                         $msg = [
+                                    'type' => 'text',
+                                    'text' => $text
+                                ];
                     }
 
                     // Get replyToken
