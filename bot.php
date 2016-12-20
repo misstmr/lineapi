@@ -23,18 +23,18 @@ if (!is_null($events['events'])) {
                             case "regis":
 
                                 $msg = [
-                                'type' => 'image',
-                                'originalContentUrl' => 'login_icon.png',
-                                'previewImageUrl' => ''
+                                    'type' => 'image',
+                                    'originalContentUrl' => 'login_icon.png',
+                                    'previewImageUrl' => ''
                                 ];
-                                    
+
                                 break;
                             case "blue":
                                 $text = "Your favorite color is blue!";
                                 break;
                             case "green":
                                 $text = "Your favorite color is green!";
-                               //  $text = "รายการ " . $temp[1] . " ยังไม่มีบริการ";
+                                //  $text = "รายการ " . $temp[1] . " ยังไม่มีบริการ";
                                 $msg = [
                                     'type' => 'text',
                                     'text' => $text
@@ -49,15 +49,15 @@ if (!is_null($events['events'])) {
                         }
                     } else {
                         $text = 'ยังไม่มีบริการ "' . $temp[1] . '" ช่วยเหลือพิมพ์ "mis:?"';
-                         $msg = [
-                                    'type' => 'text',
-                                    'text' => $text
-                                ];
+                        $msg = [
+                            'type' => 'text',
+                            'text' => $text
+                        ];
                     }
 
                     // Get replyToken
-                    $replyToken = $event['replyToken'];
-
+                    //$replyToken = $event['replyToken'];
+                    $replyToken = $event['source']['userId'];
                     // Build message to reply back
                     $messages = $msg;
 
@@ -65,8 +65,8 @@ if (!is_null($events['events'])) {
 
 
                     // Make a POST Request to Messaging API to reply to sender
-                   // $url = 'https://api.line.me/v2/bot/message/reply';
-                    $url ='https://api.line.me/v2/bot/message/push';
+                    // $url = 'https://api.line.me/v2/bot/message/reply';
+                    $url = 'https://api.line.me/v2/bot/message/push';
                     $data = [
                         'to' => $replyToken,
                         'messages' => [$messages],
