@@ -24,8 +24,8 @@ if (!is_null($events['events'])) {
 
                                 $msg = [
                                     'type' => 'image',
-                                    'originalContentUrl' => 'login_icon.png',
-                                    'previewImageUrl' => ''
+                                    'originalContentUrl' => 'https://secure-earth-92819.herokuapp.com/login_icon.jpeg',
+                                    'previewImageUrl' => 'https://secure-earth-92819.herokuapp.com/login_icon.jpeg'
                                 ];
 
                                 break;
