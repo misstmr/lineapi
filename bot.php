@@ -22,7 +22,7 @@ if (!is_null($events['events'])) {
                         switch ($temp[1]) {
                             case "regis":
                                 
-                                $action = [
+                                $actions = [
                                     'type' => 'uri',
                                     'label' => 'View detail',
                                     'uri' => 'http://www.med.cmu.ac.th'
