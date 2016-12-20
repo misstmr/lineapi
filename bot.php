@@ -73,7 +73,7 @@ if (!is_null($events['events'])) {
                                 ];
                                 break;
                             case "?":
-                                $text = "พิมพ์ mis:regis เพื่อลงทะเบียน ตอนนี้ท่านใช้งานผ่านช่องทาง ".$type." เป็นทางลงทะเบียนแบบ ".$type;
+                                $text = "พิมพ์ mis:regis เพื่อลงทะเบียน ตอนนี้ท่านใช้งานผ่านช่องทาง ".$type." เป็นทางลงทะเบียนแบบ ".$type." id คือ ".$replyToken;
                                 $msg = [
                                     'type' => 'text',
                                     'text' => $text
