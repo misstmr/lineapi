@@ -21,13 +21,23 @@ if (!is_null($events['events'])) {
             } else {
                 $replyToken = $event['source']['groupId'];
             }
-            
+
             $temp = explode(':', $event['message']['text']);
             $num = count($temp);
             if ($num >= 1) {
                 if ($temp[0] == 'mis' || $temp[0] == 'Mis') {
                     if ($num >= 2) {
                         switch ($temp[1]) {
+                            case "worktime":
+                                if ($temp[2] == "it") {
+                                    $msg = [
+                                        'type' => 'image',
+                                        'originalContentUrl' => "https://img01.rl0.ru/ca3104ec634b6092cdfd483cbcfec3d4/c1024x1024/wfiles.brothersoft.com/s/superman-logo_6968-1024x1024.jpg",
+                                        'previewImageUrl' => "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Uvsun_trace_big.jpg/240px-Uvsun_trace_big.jpg"
+                                    ];
+                                }
+
+                                break;
                             case "regis":
 
                                 $actions = [
@@ -73,7 +83,7 @@ if (!is_null($events['events'])) {
                                 ];
                                 break;
                             case "?":
-                                $text = "พิมพ์ mis:regis เพื่อลงทะเบียน ตอนนี้ท่านใช้งานผ่านช่องทาง ".$type." เป็นทางลงทะเบียนแบบ ".$type." id คือ ".$replyToken;
+                                $text = "พิมพ์ mis:regis เพื่อลงทะเบียน ตอนนี้ท่านใช้งานผ่านช่องทาง " . $type . " เป็นทางลงทะเบียนแบบ " . $type . " id คือ " . $replyToken;
                                 $msg = [
                                     'type' => 'text',
                                     'text' => $text
